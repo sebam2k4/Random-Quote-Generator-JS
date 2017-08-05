@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  color: black;
+  background-color: bisque;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  margin-top: -50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+header {
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: burlywood;
+  text-shadow: 0px 1px 0px rgba(255,255,255,.9), 1px 0px 0px rgba(255,255,255,.9) ;
+}
+
+.quote-box {
+  border-radius: 10px;
+  border: 3px solid green;
+  width: 600px;
+  margin: auto;
+  padding: 40px 40px 30px 40px;
+  display: table;
+  background-color: #fff;
+}
+
+#quote {
+  font-size: 26px;
+  font-weight: 600;
+  display: block;
+}
+
+nav {
+  margin-top: 30px;
+  overflow: auto;
+}
+
+.quote-box .buttons {
+  display: block;
+  overflow: auto;
+  border-radius: 8px;
+  display: inline-block;
+  float: right;
+
+}
+
+.quote-box .buttons a.btn {
+  float: right;
+  display: inline-block;
+  color: white;
+  padding: 11px 18px;
+  height: auto;
+}
+
+#next {
+  background-color: skyblue;
+  padding: 13px 24px;
+  font-size: 21px;
+}
+
+#facebook {
+  background-color: #00aced;
+    width: 60px;
+}
+
+#twitter {
+  background-color: #3b5998;
+  width: 60px;
+
+}
+
+.author {
+  overflow: auto;
+  display: block;
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  padding: 16px 8px 16px 0px;
+  font-style: italic;
+}
+
+.author p::before {
+  content: "- ";
+}
+
+footer {
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: burlywood;
+  text-shadow: 0px 1px 0px rgba(255,255,255,.9), 1px 0px 0px rgba(255,255,255,.9) ;
+}
+footer p a {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+footer p a:hover {
+  color:chocolate;
+}
+
