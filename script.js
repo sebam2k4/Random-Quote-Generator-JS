@@ -15,13 +15,17 @@ var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
               ["One of the great beauties of architecture is that each time, it is like life starting all over again", "Renzo Piano"],
               ["You’ve got to bumble forward into the unknown", "Frank Gehry"]];
 
-//Get randowm new quote and display on page after 'Next Quote' button click
-function newQuote() {
+//Generate random array index value based on total array length
+function pickRandomQuote() {
+  return quotesPool[Math.floor(Math.random() * quotesPool.length)];
+}
+
+//Show new random quote on page after 'Next Quote' button click event
+function showNewQuote() {
   
-  //Random array index generator
-  var randomQuote = quotesPool[Math.floor(Math.random() * quotesPool.length)];
-  
-  //assign variables
+  // Assign random index to a variable
+  var randomQuote = pickRandomQuote();
+  //assign indexes to variables
   var quote = randomQuote[0];
   var author = randomQuote[1];
   //test: window.alert('"' + quote + '", ' + author);
@@ -31,6 +35,6 @@ function newQuote() {
   document.getElementById("quote").innerHTML = quote;
 }
 
-//Display random quote every time window is loaded or refreshed
-window.onload = newQuote;
-//window.onload = function() {newQuote()}
+//Call newQuote function on window.load to show
+//random quote every time window is loaded or refreshed
+window.onload = showNewQuote;
