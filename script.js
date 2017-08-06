@@ -15,27 +15,41 @@ var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
               ["One of the great beauties of architecture is that each time, it is like life starting all over again", "Renzo Piano"],
               ["You’ve got to bumble forward into the unknown", "Frank Gehry"]];
 
-//Generate random array index value based on total array length
+//Generate & return a random index value based on total array length
 function pickRandomQuote() {
   "use strict";
   return quotesPool[Math.floor(Math.random() * quotesPool.length)];
 }
 
-//Show new random quote on page after 'Next Quote' button click event
-function showNewQuote() {
+//Pick new random quote & assign quote and author to variables
+function pickNewQuote() {
   "use strict";
-  // Assign random index to a variable
-  var randomQuote = pickRandomQuote(),
-  //assign indexes to variables
-    quote = randomQuote[0],
-    author = randomQuote[1];
-  //test: window.alert('"' + quote + '", ' + author);
-  
-  //Display new random quote and author on page
-  document.getElementById("author").innerHTML = author;
-  document.getElementById("quote").innerHTML = quote;
+  // Call the pickRandomQuote function to assign random index value
+  var randomQuote = pickRandomQuote();
+  //assign index values to variables
+  var quote = randomQuote[0];
+  var author = randomQuote[1];
+  return [quote, author];
 }
 
-//Call newQuote function on window.load to show
-//random quote every time window is loaded or refreshed
+//MAIN FUNCTION
+//Display new quote on page and update social media share links
+//on 'Next Quote' button click event.
+function showNewQuote() {
+  "use strict";
+  //assign returned values to new variables
+  var current = pickNewQuote();
+  var currentQuote = current[0];
+  var currentAuthor = current[1];
+  
+  //Display new random quote and author on page
+  document.getElementById("quote").innerHTML = currentQuote;
+  document.getElementById("author").innerHTML = currentAuthor;
+
+  //Update Tweet button - modify tweet link to add current quote and author
+  var tweet = document.getElementById("tweet-quote");
+  tweet.href = 'https://twitter.com/intent/tweet?hashtags=quotes&text="' + currentQuote + '" -' + currentAuthor;
+}
+
+//Show random quote every time window is loaded or refreshed
 window.onload = showNewQuote;
