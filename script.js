@@ -17,17 +17,18 @@ var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
 
 //Generate random array index value based on total array length
 function pickRandomQuote() {
+  "use strict";
   return quotesPool[Math.floor(Math.random() * quotesPool.length)];
 }
 
 //Show new random quote on page after 'Next Quote' button click event
 function showNewQuote() {
-  
+  "use strict";
   // Assign random index to a variable
-  var randomQuote = pickRandomQuote();
+  var randomQuote = pickRandomQuote(),
   //assign indexes to variables
-  var quote = randomQuote[0];
-  var author = randomQuote[1];
+    quote = randomQuote[0],
+    author = randomQuote[1];
   //test: window.alert('"' + quote + '", ' + author);
   
   //Display new random quote and author on page
