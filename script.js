@@ -21,8 +21,7 @@ var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
                   ["#F2B7A6", "#E46E4E", "#B13B1B"],
                   ["#C3C8BC", "#919A84", "#5E6553"],
                   ["#C3F17E", "#98E723", "#6AA512"],
-                  ["#700783", "#791345", "#801d0f"],
-                  ["#DD51F6", "#700783", "#F401A7"]];
+                  ["#DD51F6", "#F401A7", "#F401A7"]];
   
 //Generate & return a random index value based on total array length
 function pickRandomIndex(param1) {
