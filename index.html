@@ -2,32 +2,39 @@
 <html>
 
 <head>
-  
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta charset="UTF-8">
+  <title>Random Architecture Quote Generator</title>
+  <meta content="" name="description">
+  <meta content="Sebastian Kulig" name="author">
+  <link href="reset.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
 </head>
 
 <body>
  <div class="container">
- <header>
+ <header class="transparent">
    <h1>Random Architecture Quote Generator</h1>
  </header>
-  <main>
-    <div class="quote-box">
-      <q id="quote">Random Quote</q>
-      <nav>
-      <div class="author">
-        <p id="author">Author</p>
-      </div>
-      <div class="buttons">
-        <a href="#" title="Next Quote" class="btn" id="next" onClick="showNewQuote()"> Next Quote</a>
-        <a href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet this quote" class="btn" id="tweet-quote"><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
-      </div>
-      </nav>
+  <main class="quote-box border">
+   
+    <div class="quote-area">
+    <q id="quote">Random Quote</q>
     </div>
+    
+    <div class="author-area">
+      <p id="author">Author</p>
+    </div>
+    
+    <div class="buttons-area">
+      <a class="btn border-smaller" id="next" href="#" title="Next Quote" onClick="showNewQuote()"> Random Quote</a>
+      <a class="btn border-smaller" id="tweet-quote" href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet this quote"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+
   </main>
-    <footer>
+    <footer class="transparent">
       <p>Coded by Sebastian - see source on <a href="https://github.com/sebam2k4/Random-Quote-Generator-JS">GitHub</a></p>
     </footer>
   </div>
