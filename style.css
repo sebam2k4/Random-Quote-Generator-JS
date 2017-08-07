@@ -1,6 +1,6 @@
 body {
   font-size: 14px;
-  background-color: #ECF5B7;
+  background: #ECF5B7;
   font-family: sans-serif;
   text-align: center;
   color: #7D9014;
@@ -16,9 +16,9 @@ body {
   box-shadow: 3px 3px 0px 2px #7D9014;
 }
 
-.border-smaller:active {
+/*.border-smaller:active {
   box-shadow: none;
-}
+} */
 
 .transparent {
 	zoom: 1;
@@ -75,7 +75,6 @@ header {
 }
 
 .btn {
-  color: #7D9014;
   float: left;
   background-color: #ECF5B7;
   border-radius: 1px;
