@@ -18,10 +18,17 @@ var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
 
 var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
                   ["#B7E1CE", "#358260", "#1E4835"],
-                  ["#F2B7A6", "#E46E4E", "#B13B1B"],
+                  ["#FFAB91", "#FF7043", "#E64A19"],
                   ["#C3C8BC", "#919A84", "#5E6553"],
-                  ["#C3F17E", "#98E723", "#6AA512"],
-                  ["#DD51F6", "#F401A7", "#F401A7"]];
+                  ["#EF9A9A", "#F44336", "#D32F2F"],
+                  ["#E6EE9C", "#CDDC39", "#827717"],
+                  ["#90CAF9", "#2196F3", "#1565C0"],
+                  ["#CE93D8", "#AB47BC", "#6A1B9A"],
+                  ["#F8BBD0", "#F06292", "#E91E63"],
+                  ["#C5CAE9", "#7986CB", "#3F51B5"],
+                  ["#B0BEC5", "#78909C", "#546E7A"],
+                  ["#B2EBF2", "#26C6DA", "#0097A7"],
+                  ["#BCAAA4", "#795548", "#3E2723"]];
   
 //Generate & return a random index value based on total array length
 function pickRandomIndex(param1) {
