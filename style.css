@@ -16,9 +16,9 @@ body {
   box-shadow: 3px 3px 0px 2px #7D9014;
 }
 
-.border-smaller:active {
+/*.border-smaller:active {
   box-shadow: none;
-}
+} */
 
 .transparent {
 	zoom: 1;
