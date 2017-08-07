@@ -74,15 +74,22 @@ header {
   width: 100%;
 }
 
+.buttons-area {
+  float: left;
+}
+
 .btn {
   color: #7D9014;
   float: left;
-  margin-right: 10px;
   background-color: #ECF5B7;
   border-radius: 1px;
   font-size: 20px;
+  margin-right: 8px;
 }
 
+.btn:first-of-type {
+  margin-right: 24px;
+}
 #next {
   padding: 12px 24px;
 }
@@ -92,15 +99,18 @@ header {
   font-size: 30px;
 }
 
-.author {
-  font-size: 18px;
-  float: right;
-  padding: 16px 8px 16px 0px;
-  font-style: italic;
+.author-area p::before {
+  content: "- ";
 }
 
-.author p::before {
-  content: "- ";
+.author-area {
+  float: right;
+}
+
+#author {
+  font-size: 18px;
+  padding: 16px 8px 16px 0px;
+  font-style: italic;
 }
 
 footer {
@@ -113,3 +123,37 @@ footer p a {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 650px) {
+  .container {
+  position: relative;
+  padding-top: 20px;
+  height: 1vh;
+  } 
+  
+  .quote-box {
+    width: 100%;
+    height: auto;
+  }
+  
+  #quote {
+  padding: 30px 20px 0px 20px;
+  width: 100%;
+  }
+  
+  .author-area {
+    float: none;
+  }
+  
+  .btn {
+    vertical-align:middle;
+    float: none 
+  }
+  .buttons-area {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: none;
+  }
+  #tweet-quote {
+  padding: 6px 16px;
+  }
+}
