@@ -56,19 +56,16 @@ function showNewQuote() {
   var current = pickNewQuote();
   var currentQuote = current[0];
   var currentAuthor = current[1];
-  
   //Display new random quote and author on page
   document.getElementById("quote").innerHTML = currentQuote;
   document.getElementById("author").innerHTML = currentAuthor;
-
   //Update Tweet button - modify tweet link to add current quote and author
   var tweet = document.getElementById("tweet-quote");
   tweet.href = 'https://twitter.com/intent/tweet?hashtags=quotes&text="' + currentQuote + '" -' + currentAuthor;
 }
 
-//onClick EVENT FUNCTION 2
-//Pick & dipslay new random color sheeme on 'Next Quote' vutton click event.
-function showNewColor() {
+//Pick new random color shceeme & assign to variables
+function pickNewColor() {
   "use strict";
   // Call the pickRandomIndex function to assign random index value
   var randomColor = pickRandomIndex(colorsPool);
@@ -76,17 +73,31 @@ function showNewColor() {
   var light = randomColor[0];
   var dark = randomColor[1];
   var darker = randomColor[2];
+  return [light, dark, darker];
+
+}
+
+//onClick EVENT FUNCTION 2
+//Dipslay new random color sheeme on 'Next Quote' button click event.
+function showNewColor() {
+  "use strict";
+  //assign returned values to new variables
+  var currentColor = pickNewColor();
+  var colorCheck = currentColor
+  var currentLight = currentColor[0];
+  var currentDark = currentColor[1];
+  var currentDarker = currentColor[2];
   //Assign new random color scheeme
-  document.body.style.background = light;
-  document.body.style.color = darker;
-  document.querySelectorAll(".btn")[0].style.background = light;
-  document.querySelectorAll(".btn")[1].style.background = light;
-  document.querySelector(".border").style.borderColor = dark;
-  document.querySelector(".border").style.boxShadow =  "4px 4px 0px 3px " + darker;
-  document.querySelectorAll(".border-smaller")[0].style.borderColor = dark;
-  document.querySelectorAll(".border-smaller")[0].style.boxShadow =  "3px 3px 0px 2px " + darker;
-  document.querySelectorAll(".border-smaller")[1].style.borderColor = dark;
-  document.querySelectorAll(".border-smaller")[1].style.boxShadow =  "3px 3px 0px 2px " + darker;
+  document.body.style.background = currentLight;
+  document.body.style.color = currentDarker;
+  document.querySelectorAll(".btn")[0].style.background = currentLight;
+  document.querySelectorAll(".btn")[1].style.background = currentLight;
+  document.querySelector(".border").style.borderColor = currentDark;
+  document.querySelector(".border").style.boxShadow =  "4px 4px 0px 3px " + currentDarker;
+  document.querySelectorAll(".border-smaller")[0].style.borderColor = currentDark;
+  document.querySelectorAll(".border-smaller")[0].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
+  document.querySelectorAll(".border-smaller")[1].style.borderColor = currentDark;
+  document.querySelectorAll(".border-smaller")[1].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
 }
 
 //Show random quote every time window is loaded or refreshed
