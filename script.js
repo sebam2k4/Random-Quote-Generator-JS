@@ -1,4 +1,5 @@
-//dataset of quotes and their authors
+// DATA
+// 1. dataset of quotes and their authors
 var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
               ["God is in the Details", "Ludwig Mies Van Der Rohe"],
               ["Architecture starts when you carefully put two bricks together. There it begins", "Ludwig Mies Van Der Rohe"],
@@ -15,7 +16,7 @@ var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
               ["One of the great beauties of architecture is that each time, it is like life starting all over again", "Renzo Piano"],
               ["You’ve got to bumble forward into the unknown", "Frank Gehry"]];
 
-
+// 2. dataset of color schemes
 var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
                   ["#B7E1CE", "#358260", "#1E4835"],
                   ["#FFAB91", "#FF7043", "#E64A19"],
@@ -29,65 +30,40 @@ var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
                   ["#B0BEC5", "#78909C", "#546E7A"],
                   ["#B2EBF2", "#26C6DA", "#0097A7"],
                   ["#BCAAA4", "#795548", "#3E2723"]];
-  
-//Generate & return a random index value based on total array length
-function pickRandomIndex(param1) {
-  "use strict";
-  return param1[Math.floor(Math.random() * param1.length)];
+
+
+// HELPER FUNCTIONS
+// 1. Get random index number based on parameter array length
+function pickNew(dataPool) {
+  var randomIndex = Math.floor(Math.random() * dataPool.length);
+  return randomIndex;
 }
 
-//Pick new random quote & assign quote and author to variables
-function pickNewQuote() {
-  "use strict";
-  // Call the pickRandomIndex function to assign random index value
-  var randomQuote = pickRandomIndex(quotesPool);
-  //assign index values to variables
-  var quote = randomQuote[0];
-  var author = randomQuote[1];
-  return [quote, author];
-}
 
-//OnClick EVENT FUNCTION 1
-//Display new quote on page and update social media share links
-//on 'Next Quote' button click event.
+// EVENT FUNCTIONS
+// 1. ONCLICK - Display new quote on page and update social media share links
+// on 'Next Quote' button click event.
 function showNewQuote() {
-  "use strict";
-  //assign returned values to new variables
-  var current = pickNewQuote();
-  var currentQuote = current[0];
-  var currentAuthor = current[1];
+  var index = pickNew(quotesPool);
+  var newQuote = quotesPool[index];
+  var currentQuote = newQuote[0];
+  var currentAuthor = newQuote[1];
   //Display new random quote and author on page
   document.getElementById("quote").innerHTML = currentQuote;
   document.getElementById("author").innerHTML = currentAuthor;
-  //Update Tweet button - modify tweet link to add current quote and author
+  //Update Tweet button link - modify tweet link to add current quote and author
   var tweet = document.getElementById("tweet-quote");
   tweet.href = 'https://twitter.com/intent/tweet?hashtags=quotes&text="' + currentQuote + '" -' + currentAuthor;
 }
 
-//Pick new random color shceeme & assign to variables
-function pickNewColor() {
-  "use strict";
-  // Call the pickRandomIndex function to assign random index value
-  var randomColor = pickRandomIndex(colorsPool);
-  //assign index values to variables
-  var light = randomColor[0];
-  var dark = randomColor[1];
-  var darker = randomColor[2];
-  return [light, dark, darker];
-
-}
-
-//onClick EVENT FUNCTION 2
-//Dipslay new random color sheeme on 'Next Quote' button click event.
+// 2. ONCLICK - Dipslay new random color sheeme on 'Next Quote' button click event.
 function showNewColor() {
-  "use strict";
-  //assign returned values to new variables
-  var currentColor = pickNewColor();
-  var colorCheck = currentColor
-  var currentLight = currentColor[0];
-  var currentDark = currentColor[1];
-  var currentDarker = currentColor[2];
-  //Assign new random color scheeme
+  var index = pickNew(colorsPool);
+  var newColor = colorsPool[index];
+  var currentLight = newColor[0];
+  var currentDark = newColor[1];
+  var currentDarker = newColor[2];
+  //Assign new random color scheme to HTML inline style
   document.body.style.background = currentLight;
   document.body.style.color = currentDarker;
   document.querySelectorAll(".btn")[0].style.background = currentLight;
@@ -100,9 +76,9 @@ function showNewColor() {
   document.querySelectorAll(".border-smaller")[1].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
 }
 
-//Show random quote every time window is loaded or refreshed
-window.onload = function() {
+// Show random quote and color scheme on window load
+window.onload = function () {
   showNewQuote();
   showNewColor();
-//Show random new color every time window is loaded or refreshed
 };
+

@@ -6,3 +6,8 @@
 * HTML5
 * CSS3
 * JavaScript
+
+
+To Do:
+* Generate unique random quote and color on click event. (same quote and color can't be choosen again)
+TRY: `if(new == current) {pick again} else {replace quote and color with new current}`
