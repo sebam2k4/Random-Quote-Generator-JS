@@ -32,8 +32,13 @@ var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
                   ["#BCAAA4", "#795548", "#3E2723"]];
 
 
+// GLOBAL VARIABLES
+var oldQuoteIndex;
+var oldColorIndex;
+
+
 // HELPER FUNCTIONS
-// 1. Get random index number based on parameter array length
+// 1. Get random index number based on input parameter's length
 function pickNew(dataPool) {
   var randomIndex = Math.floor(Math.random() * dataPool.length);
   return randomIndex;
@@ -45,6 +50,10 @@ function pickNew(dataPool) {
 // on 'Next Quote' button click event.
 function showNewQuote() {
   var index = pickNew(quotesPool);
+  // Get unique index to previous one (no same quote can be picked in a row)
+  while (index === oldQuoteIndex) {
+    index = pickNew(quotesPool);
+  }
   var newQuote = quotesPool[index];
   var currentQuote = newQuote[0];
   var currentAuthor = newQuote[1];
@@ -54,11 +63,16 @@ function showNewQuote() {
   //Update Tweet button link - modify tweet link to add current quote and author
   var tweet = document.getElementById("tweet-quote");
   tweet.href = 'https://twitter.com/intent/tweet?hashtags=quotes&text="' + currentQuote + '" -' + currentAuthor;
+  oldQuoteIndex = index;
 }
 
 // 2. ONCLICK - Dipslay new random color sheeme on 'Next Quote' button click event.
 function showNewColor() {
   var index = pickNew(colorsPool);
+  // Get unique color scheme to previous one (no same color scheme can be picked in a row)
+  while (index === oldColorIndex) {
+    index = pickNew(colorsPool);
+  }
   var newColor = colorsPool[index];
   var currentLight = newColor[0];
   var currentDark = newColor[1];
@@ -74,11 +88,12 @@ function showNewColor() {
   document.querySelectorAll(".border-smaller")[0].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
   document.querySelectorAll(".border-smaller")[1].style.borderColor = currentDark;
   document.querySelectorAll(".border-smaller")[1].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
+  oldColorIndex = index;
 }
+
 
 // Show random quote and color scheme on window load
 window.onload = function () {
   showNewQuote();
   showNewColor();
 };
-
