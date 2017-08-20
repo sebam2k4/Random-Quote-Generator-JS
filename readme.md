@@ -7,5 +7,5 @@
 * CSS3
 * JavaScript
 
-Changelog: 
+### Changelog: 
 * Pick unique new quote and color scheme on 'Next' button click. (No same quote or color scheme can be picked in a row)
