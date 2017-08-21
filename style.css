@@ -127,9 +127,11 @@ footer p a {
   } 
   
   .quote-box {
-    width: 100%;
+    width: 92%;
   }
-  
+  .quote-area {
+    min-height: 330px;
+  }
   #quote {
   padding: 30px 20px 0px 20px;
   width: 100%;
@@ -159,8 +161,13 @@ footer p a {
   .btn:first-of-type {
   margin-right: 0px;
   }
+  .quote-box {
+    padding: 0px 10px 10px 10px;
+  }
   .quote-area {
-    margin: 10px 0;
-    min-height: 350px;
+    min-height: 300px;
+  }
+  #quote {
+  padding: 0px;
   }
 }
