@@ -8,4 +8,5 @@
 * JavaScript
 
 ### Changelog: 
+* 22/08/2017: Added transition to background
 * 20/08/2017: Pick unique new quote and color scheme on 'Next' button click. (No same quote or color scheme can be picked in a row)
