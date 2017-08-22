@@ -4,7 +4,10 @@ body {
   font-family: sans-serif;
   text-align: center;
   color: #7D9014;
-  transition: .6s;
+  transition: all 0.8s;
+  -moz-transition: all 0.8s; 
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
 }
 
 .border {
