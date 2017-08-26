@@ -39,20 +39,19 @@ var oldColorIndex;
 
 // HELPER FUNCTIONS
 // 1. Get random index number based on input parameter's length
-function pickNew(dataPool) {
-  var randomIndex = Math.floor(Math.random() * dataPool.length);
-  return randomIndex;
+function generateNumber(dataPool) {
+  return Math.floor(Math.random() * dataPool.length);
 }
 
 
 // EVENT FUNCTIONS
 // 1. ONCLICK - Display new quote on page and update social media share links
 // on 'Next Quote' button click event.
-function showNewQuote() {
-  var index = pickNew(quotesPool);
+function generateNewQuote() {
+  var index = generateNumber(quotesPool);
   // Get unique index to previous one (no same quote can be picked in a row)
   while (index === oldQuoteIndex) {
-    index = pickNew(quotesPool);
+    index = generateNumber(quotesPool);
   }
   var newQuote = quotesPool[index];
   var currentQuote = newQuote[0];
@@ -67,11 +66,11 @@ function showNewQuote() {
 }
 
 // 2. ONCLICK - Dipslay new random color sheeme on 'Next Quote' button click event.
-function showNewColor() {
-  var index = pickNew(colorsPool);
+function generateNewColor() {
+  var index = generateNumber(colorsPool);
   // Get unique color scheme to previous one (no same color scheme can be picked in a row)
   while (index === oldColorIndex) {
-    index = pickNew(colorsPool);
+    index = generateNumber(colorsPool);
   }
   var newColor = colorsPool[index];
   var currentLight = newColor[0];
@@ -91,9 +90,19 @@ function showNewColor() {
   oldColorIndex = index;
 }
 
+// Show new quote and color on 'Ransom Quote' button click
+function onQuoteButtonClick() {
+  var quoteButton = document.querySelector("#random-quote");
+  quoteButton.addEventListener("click", function(){
+    generateNewQuote();
+    generateNewColor();
+  })
+}
 
-// Show random quote and color scheme on window load
+onQuoteButtonClick()
+
+// Get the first quote and color scheme
 window.onload = function () {
-  showNewQuote();
-  showNewColor();
+  generateNewQuote();
+  generateNewColor();
 };
