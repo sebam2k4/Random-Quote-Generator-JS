@@ -4,19 +4,24 @@ body {
   font-family: sans-serif;
   text-align: center;
   color: #7D9014;
-  transition: all 0.8s;
-  -moz-transition: all 0.8s; 
-  -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
+  -moz-transition: all 0.4s; 
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+
 }
 
 .border {
   border: 6px solid #9CB418;
+  -webkit-box-shadow: 4px 4px 0 3px #7D9014;
+  -moz-box-shadow: 4px 4px 0 3px #7D9014;
   box-shadow: 4px 4px 0 3px #7D9014;
 }
 
 .border-smaller {
   border: 4px solid #9CB418;
+  -webkit-box-shadow: 3px 3px 0 2px #7D9014;
+  -moz-box-shadow: 3px 3px 0 2px #7D9014;
   box-shadow: 3px 3px 0 2px #7D9014;
 }
 
