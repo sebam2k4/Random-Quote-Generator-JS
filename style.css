@@ -3,12 +3,10 @@ body {
   background: #ECF5B7;
   font-family: sans-serif;
   text-align: center;
-  color: #7D9014;
-  -moz-transition: all 0.4s; 
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-
+  -moz-transition: all .6s; 
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
 }
 
 .border {
@@ -46,6 +44,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  color: #7D9014;
   } 
 
 header {

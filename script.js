@@ -78,6 +78,7 @@ function generateNewColor() {
   let randomQuoteButton = document.querySelectorAll(".btn")[0];
   let twitterButton = document.querySelectorAll(".btn")[1];
   let background = document.body;
+  let text = document.querySelector(".container");
   let border = document.querySelector(".border");
   let randomQuoteBorder = document.querySelectorAll(".border-smaller")[0];
   let twitterBorder = document.querySelectorAll(".border-smaller")[1];
@@ -85,7 +86,7 @@ function generateNewColor() {
   randomQuoteButton.style.background = colorShade[0];
   twitterButton.style.background = colorShade[0];
   background.style.background = colorShade[0];
-  background.style.color = colorShade[1];
+  text.style.color = colorShade[1];
   border.style.borderColor = colorShade[1];
   border.style.boxShadow = "4px 4px 0px 3px " + colorShade[2]
   randomQuoteBorder.style.borderColor = colorShade[1];
