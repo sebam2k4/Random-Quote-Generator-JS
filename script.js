@@ -87,11 +87,11 @@ function generateNewColor() {
   background.style.background = colorShade[0];
   background.style.color = colorShade[1];
   border.style.borderColor = colorShade[1];
-  border.style.boxShadow =  "4px 4px 0px 3px " + colorShade[2]
+  border.style.boxShadow = "4px 4px 0px 3px " + colorShade[2]
   randomQuoteBorder.style.borderColor = colorShade[1];
-  randomQuoteBorder.style.boxShadow =  "3px 3px 0px 2px " + colorShade[2];
+  randomQuoteBorder.style.boxShadow = "3px 3px 0px 2px " + colorShade[2];
   twitterBorder.style.borderColor = colorShade[1];
-  twitterBorder.style.boxShadow =  "3px 3px 0px 2px " + colorShade[2];
+  twitterBorder.style.boxShadow = "3px 3px 0px 2px " + colorShade[2];
 //update index checker
   oldColorIndex = index;
 }
