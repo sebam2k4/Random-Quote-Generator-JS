@@ -12,4 +12,3 @@
 * 20/08/2017: Pick unique new quote and color scheme on 'Next' button click. (No same quote or color scheme can be picked in a row)
 
 ### Bugs:
-* CSS `transition` property seems to be causing a delay in color change for text and button elements.
