@@ -96,7 +96,7 @@ function generateNewColor() {
   oldColorIndex = index;
 }
 
-//Show new quote and color on 'Ransom Quote' button click
+//Show new quote and change color scheme on 'Random Quote' button click
 function onQuoteButtonClick() {
   let randomQuoteButton = document.querySelector("#random-quote");
   randomQuoteButton.addEventListener("click", function(){
@@ -107,7 +107,7 @@ function onQuoteButtonClick() {
 
 onQuoteButtonClick()
 
-// Get the first quote and color scheme
+// Get the first quote and color scheme on window load
 window.onload = function () {
   generateNewQuote();
   generateNewColor();
