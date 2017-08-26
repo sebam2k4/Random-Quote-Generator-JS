@@ -1,3 +1,6 @@
+/* jshint browser: true */
+/* jshint esversion: 6 */
+
 // DATA
 // 1. dataset of quotes and their authors
 var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
@@ -88,7 +91,7 @@ function generateNewColor() {
   background.style.background = colorShade[0];
   text.style.color = colorShade[1];
   border.style.borderColor = colorShade[1];
-  border.style.boxShadow = "4px 4px 0px 3px " + colorShade[2]
+  border.style.boxShadow = "4px 4px 0px 3px " + colorShade[2];
   randomQuoteBorder.style.borderColor = colorShade[1];
   randomQuoteBorder.style.boxShadow = "3px 3px 0px 2px " + colorShade[2];
   twitterBorder.style.borderColor = colorShade[1];
@@ -103,10 +106,10 @@ function onQuoteButtonClick() {
   randomQuoteButton.addEventListener("click", function(){
     generateNewQuote();
     generateNewColor();
-  })
+  });
 }
 
-onQuoteButtonClick()
+onQuoteButtonClick();
 
 // Get the first quote and color scheme on window load
 window.onload = function () {
