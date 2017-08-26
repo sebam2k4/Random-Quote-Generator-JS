@@ -36,64 +36,70 @@ var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
 var oldQuoteIndex;
 var oldColorIndex;
 
-
-// HELPER FUNCTIONS
-// 1. Get random index number based on input parameter's length
+//Generate a random number based on argument's length
 function generateNumber(dataPool) {
   return Math.floor(Math.random() * dataPool.length);
 }
 
-
-// EVENT FUNCTIONS
-// 1. ONCLICK - Display new quote on page and update social media share links
-// on 'Next Quote' button click event.
+//1. Get random number from generateNumber()
+//2. check random number to make sure it's not same as last one
+//3. Use random number to get new quote from array
+//4. Display the quote
 function generateNewQuote() {
-  var index = generateNumber(quotesPool);
-  // Get unique index to previous one (no same quote can be picked in a row)
+  let index = generateNumber(quotesPool);
+//While loop so no same quote is generated in a row
   while (index === oldQuoteIndex) {
     index = generateNumber(quotesPool);
   }
-  var newQuote = quotesPool[index];
-  var currentQuote = newQuote[0];
-  var currentAuthor = newQuote[1];
-  //Display new random quote and author on page
-  document.getElementById("quote").innerHTML = currentQuote;
-  document.getElementById("author").innerHTML = currentAuthor;
-  //Update Tweet button link - modify tweet link to add current quote and author
-  var tweet = document.getElementById("tweet-quote");
-  tweet.href = 'https://twitter.com/intent/tweet?hashtags=quotes&text="' + currentQuote + '" -' + currentAuthor;
+  let newQuote = quotesPool[index];
+  let quote = document.getElementById("quote");
+  let author = document.getElementById("author");
+//Show new quote and author on page
+  quote.innerHTML = newQuote[0];
+  author.innerHTML = newQuote[1];
+//Update Tweet href attribute with new quote and author
+  let tweet = document.getElementById("tweet-quote");
+  tweet.href = 'https://twitter.com/intent/tweet?hashtags=quotes&text="' + newQuote[0] + '" -' + newQuote[1];
+//update index checker
   oldQuoteIndex = index;
 }
 
-// 2. ONCLICK - Dipslay new random color sheeme on 'Next Quote' button click event.
+//1. Get random number from generateNumber()
+//2. check random number to make sure it's not same as last one
+//3. Use random number to get new color scheme from array
+//4. Update page with new color scheme
 function generateNewColor() {
-  var index = generateNumber(colorsPool);
-  // Get unique color scheme to previous one (no same color scheme can be picked in a row)
+  let index = generateNumber(colorsPool);
+// While loop so no same color scheme is generated in a row
   while (index === oldColorIndex) {
     index = generateNumber(colorsPool);
   }
-  var newColor = colorsPool[index];
-  var currentLight = newColor[0];
-  var currentDark = newColor[1];
-  var currentDarker = newColor[2];
-  //Assign new random color scheme to HTML inline style
-  document.body.style.background = currentLight;
-  document.body.style.color = currentDarker;
-  document.querySelectorAll(".btn")[0].style.background = currentLight;
-  document.querySelectorAll(".btn")[1].style.background = currentLight;
-  document.querySelector(".border").style.borderColor = currentDark;
-  document.querySelector(".border").style.boxShadow =  "4px 4px 0px 3px " + currentDarker;
-  document.querySelectorAll(".border-smaller")[0].style.borderColor = currentDark;
-  document.querySelectorAll(".border-smaller")[0].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
-  document.querySelectorAll(".border-smaller")[1].style.borderColor = currentDark;
-  document.querySelectorAll(".border-smaller")[1].style.boxShadow =  "3px 3px 0px 2px " + currentDarker;
+  let colorShade = colorsPool[index];
+  let randomQuoteButton = document.querySelectorAll(".btn")[0];
+  let twitterButton = document.querySelectorAll(".btn")[1];
+  let background = document.body;
+  let border = document.querySelector(".border");
+  let randomQuoteBorder = document.querySelectorAll(".border-smaller")[0];
+  let twitterBorder = document.querySelectorAll(".border-smaller")[1];
+//Update page with new color scheme
+  randomQuoteButton.style.background = colorShade[0];
+  twitterButton.style.background = colorShade[0];
+  background.style.background = colorShade[0];
+  background.style.color = colorShade[1];
+  border.style.borderColor = colorShade[1];
+  border.style.boxShadow =  "4px 4px 0px 3px " + colorShade[2]
+  randomQuoteBorder.style.borderColor = colorShade[1];
+  randomQuoteBorder.style.boxShadow =  "3px 3px 0px 2px " + colorShade[2];
+  twitterBorder.style.borderColor = colorShade[1];
+  twitterBorder.style.boxShadow =  "3px 3px 0px 2px " + colorShade[2];
+//update index checker
   oldColorIndex = index;
 }
 
-// Show new quote and color on 'Ransom Quote' button click
+//Show new quote and color on 'Ransom Quote' button click
 function onQuoteButtonClick() {
-  var quoteButton = document.querySelector("#random-quote");
-  quoteButton.addEventListener("click", function(){
+  let randomQuoteButton = document.querySelector("#random-quote");
+  randomQuoteButton.addEventListener("click", function(){
     generateNewQuote();
     generateNewColor();
   })
