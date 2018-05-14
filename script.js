@@ -1,12 +1,12 @@
 /* jshint browser: true */
 /* jshint esversion: 6 */
 
-//Enclosing in a module
-(function(){
+//Make sure DOM is ready
+document.addEventListener("DOMContentLoaded",function(){
   
 // DATA
 // 1. dataset of quotes and their authors
-  var quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
+  const quotesPool = [["Less is More", "Ludwig Mies Van Der Rohe"],
                 ["God is in the Details", "Ludwig Mies Van Der Rohe"],
                 ["Architecture starts when you carefully put two bricks together. There it begins", "Ludwig Mies Van Der Rohe"],
                 ["Good building come from good people and all problems are solved by good design", "Stephen Gardiner"],
@@ -23,7 +23,7 @@
                 ["You’ve got to bumble forward into the unknown", "Frank Gehry"]];
 
 // 2. dataset of color schemes
-  var colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
+  const colorsPool = [["#ECF5B7", "#9CB418", "#7D9014"],
                     ["#B7E1CE", "#358260", "#1E4835"],
                     ["#FFAB91", "#FF7043", "#E64A19"],
                     ["#C3C8BC", "#919A84", "#5E6553"],
@@ -38,8 +38,8 @@
                     ["#BCAAA4", "#795548", "#3E2723"]];
 
 // VARIABLES
-  var oldQuoteIndex;
-  var oldColorIndex;
+  let oldQuoteIndex;
+  let oldColorIndex;
 
 //Generate a random number based on argument's length
   function generateNumber(dataPool) {
@@ -119,4 +119,4 @@
     generateNewColor();
   };
   
-})(); // end of module
+});
